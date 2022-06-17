@@ -29,21 +29,20 @@ public class Program {
 
     public static int searchMin(int first, int second
             , int third, int fourth, int fifth) {
-        int result = 0;
+        int result = first;
 
-        result = first;
-
-        if (result > second)
+        if (result > second) {
             result = second;
-
-        if (result > third)
+        }
+        if (result > third) {
             result = third;
-
-        if (result > fourth)
+        }
+        if (result > fourth) {
             result = fourth;
-
-        if (result > fifth)
+        }
+        if (result > fifth) {
             result = fifth;
+        }
 
         return result;
     }
@@ -53,7 +52,9 @@ public class Program {
         int times = numWeek;
 
         for (int i = 1; i <= numWeek; i++, times--) {
-            System.out.print("Week " + i + " ");
+            System.out.print("Week ");
+            System.out.print(i);
+            System.out.print(" ");
             writeEquals = howManyTimesToPrintEquals(result, times);
             for (int j = 0; j < writeEquals; j++) {
                 System.out.print("=");
@@ -93,8 +94,10 @@ public class Program {
             }
             checkStringOnValid(str, "Week");
             numWeek = scanner.nextInt();
-            str = str + " " + numWeek;
-            checkStringOnValid("Week " + (i + 1), str);
+            if (numWeek != (i + 1)) {
+                System.err.println("IllegalArgument");
+                System.exit(-1);
+            }
             first = scanner.nextInt();
             second = scanner.nextInt();
             third = scanner.nextInt();
