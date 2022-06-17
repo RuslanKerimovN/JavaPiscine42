@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Program {
 
-    static int returnedSumNumber(int value) {
+    public static int returnedSumNumber(int value) {
         int sumNumber = 0;
         for (int i = 0; value > 0; i++) {
             sumNumber += value % 10;
@@ -13,7 +13,7 @@ public class Program {
         return sumNumber;
     }
 
-    static boolean isCupOrNot(int sumNumber) {
+    public static boolean isCupOrNot(int sumNumber) {
         for (int i = 2; i < sumNumber; i++) {
             if (sumNumber % i == 0)
                 return false;
@@ -37,8 +37,8 @@ public class Program {
                 System.out.println("Count of coffee-request - " + sum);
                 System.exit(1);
             }
-            value = Program.returnedSumNumber(value);
-            if (Program.isCupOrNot(value))
+            value = returnedSumNumber(value);
+            if (isCupOrNot(value))
                 sum++;
         }
     }

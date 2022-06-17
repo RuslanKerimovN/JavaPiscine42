@@ -91,18 +91,18 @@ public class Program {
             if (str.equals("42")) {
                 break;
             }
-            Program.checkStringOnValid(str, "Week");
+            checkStringOnValid(str, "Week");
             numWeek = scanner.nextInt();
             str = str + " " + numWeek;
-            Program.checkStringOnValid("Week " + (i + 1), str);
+            checkStringOnValid("Week " + (i + 1), str);
             first = scanner.nextInt();
             second = scanner.nextInt();
             third = scanner.nextInt();
             fourth = scanner.nextInt();
             fifth = scanner.nextInt();
-            Program.checkTests(first, second, third, fourth, fifth);
-            result = result * 10 + Program.searchMin(first, second, third, fourth, fifth);
+            checkTests(first, second, third, fourth, fifth);
+            result = result * 10 + searchMin(first, second, third, fourth, fifth);
         }
-        Program.writeResult(result, numWeek);
+        writeResult(result, numWeek);
     }
 }
