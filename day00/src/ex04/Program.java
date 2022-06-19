@@ -85,7 +85,7 @@ public class Program {
             }
             System.out.println();
         }
-        for (int i = 0; i < MAX_SIZE_GRAPH; i++) {
+        for (int i = 0; i < lenght; i++) {
             System.out.print(chars[i] + "\t");
         }
     }
@@ -105,9 +105,15 @@ public class Program {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String string = scanner.nextLine();
+        if (!scanner.hasNextLine()) {
+            System.err.println("IllegalArgument");
+            System.exit(-1);
+        }
 
-        char[] stringArray = string.toCharArray();
+        char[] stringArray = scanner.nextLine().toCharArray();
+        if (stringArray.length == 0) {
+            System.exit(0);
+        }
 
         char[] chars = {stringArray[0]};
 
