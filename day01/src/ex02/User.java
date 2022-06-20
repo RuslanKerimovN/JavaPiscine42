@@ -11,7 +11,7 @@ public class User {
         setBalance(balance);
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -19,7 +19,7 @@ public class User {
         return name;
     }
 
-    public long getBalance() {
+    public Integer getBalance() {
         return balance;
     }
 

@@ -13,13 +13,13 @@ public class User {
         this.transactionsList = new TransactionsLinkedList();
     }
 
-    public long getId() { return id; }
+    public Integer getId() { return id; }
 
     public String getName() {
         return name;
     }
 
-    public long getBalance() {
+    public Integer getBalance() {
         return balance;
     }
 
