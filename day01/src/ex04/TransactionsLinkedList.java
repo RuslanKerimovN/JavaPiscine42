@@ -1,4 +1,4 @@
-package ex03;
+package ex04;
 
 import java.util.UUID;
 
@@ -11,6 +11,10 @@ public class TransactionsLinkedList implements TransactionsList {
         head = null;
         tail = null;
         size = 0;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     @Override
@@ -31,20 +35,20 @@ public class TransactionsLinkedList implements TransactionsList {
         Node tmp = head;
 
         if (head == null) {
-            return;
+            throw new TransactionNotFoundException();
         }
-        else if (head.value.getId() == id) {
+        else if (head.value.getId().equals(id)) {
             this.head = this.head.next;
             size--;
             return;
         }
-        else if (tail.value.getId() == id) {
+        else if (tail.value.getId().equals(id)) {
             this.tail = this.tail.prev;
             size--;
             return;
         }
         for (int i = 0; i < size; i++) {
-            if (tmp.value.getId() == id) {
+            if (tmp.value.getId().equals(id)) {
                 tmp.next.prev = tmp.prev;
                 tmp.prev.next = tmp.next;
                 size--;
@@ -52,7 +56,7 @@ public class TransactionsLinkedList implements TransactionsList {
             }
             tmp = tmp.next;
         }
-        throw new TransactionNotFoundException("Transaction not found!");
+        throw new TransactionNotFoundException();
     }
 
     @Override

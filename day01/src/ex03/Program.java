@@ -23,7 +23,7 @@ public class Program {
         Transaction[] ShowArray = list.transactionToArray();
         System.out.println(Arrays.toString(ShowArray));
 
-        UUID id = transaction3.getId();
+        UUID id = transaction5.getId();
         list.removeTransactionById(id);
         ShowArray = list.transactionToArray();
         System.out.println(Arrays.toString(ShowArray));
